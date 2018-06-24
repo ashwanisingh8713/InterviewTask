@@ -22,6 +22,7 @@ public class AuthenticationActivity extends BaseActivity implements FingerPrintA
 
     private TextView mAuthMsgTv;
     private ViewSwitcher mSwitcher;
+    private EditText mPinEt;
     private FingerPrintAuthHelper mFingerPrintAuthHelper;
 
     @Override
@@ -36,11 +37,10 @@ public class AuthenticationActivity extends BaseActivity implements FingerPrintA
         // Initializing the views
         mSwitcher = findViewById(R.id.viewSwitcher);
         mAuthMsgTv = findViewById(R.id.message_tv);
-        EditText pinEt = findViewById(R.id.pin_et);
-
+        mPinEt = findViewById(R.id.pin_et);
 
         // Text Change Listener for Passwd
-        pinEt.addTextChangedListener(new TextWatcher() {
+        mPinEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
