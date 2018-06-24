@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.interview.ondot"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField 'String', 'BASE_URL', '"https://pixabay.com/api/?key="'
+        buildConfigField 'String', 'PIXABAY_KEY', '"9358258-cee0fdea8065f74c7690260dc"'
+        buildConfigField 'String', 'TYPE', '"photo"'
+        resValue "string", "app_name", "Interview Task"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation project(':fingerprint-auth')
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // Image Caching
+    implementation("com.github.bumptech.glide:glide:4.6.1") {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+}
