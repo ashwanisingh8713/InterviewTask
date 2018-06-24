@@ -25,6 +25,11 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class NetworkCall {
 
+    /**
+     * Creates request for search query
+     * @param response
+     * @param query
+     */
     public static void fetchSearchQuery(Response response, String query) {
 
         Observable.just(query)

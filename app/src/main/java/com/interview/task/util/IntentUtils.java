@@ -10,6 +10,10 @@ import com.interview.task.activity.HomeActivity;
  */
 public class IntentUtils {
 
+    /**
+     * Opens {@link HomeActivity}
+     * @param context
+     */
     public static final void openHomeActivity(Context context) {
         context.startActivity(new Intent(context, HomeActivity.class));
     }

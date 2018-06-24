@@ -37,12 +37,6 @@ public class TwoColumnAdapter extends ArrayAdapter<TwoColumnBean> {
         return mImageBeans.size();
     }
 
-    /*@Nullable
-    @Override
-    public TwoColumnBean getItem(int position) {
-        return mImageBeans.get(position);
-    }*/
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -92,7 +86,10 @@ public class TwoColumnAdapter extends ArrayAdapter<TwoColumnBean> {
         private RelativeLayout column2;
     }
 
-
+    /**
+     * Updates the data of adapter
+     * @param imageBeans
+     */
     public void updateData(ArrayList<TwoColumnBean> imageBeans) {
         clear();
         addAll(imageBeans);

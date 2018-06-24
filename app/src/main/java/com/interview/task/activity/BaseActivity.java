@@ -14,6 +14,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract int getLayoutRes();
 
+    /** Toolbar declaration, single implementation can be used in many activity */
     private Toolbar mToolbar;
 
     @Override
