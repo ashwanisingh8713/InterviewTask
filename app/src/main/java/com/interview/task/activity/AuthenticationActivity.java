@@ -18,7 +18,7 @@ import com.multidots.fingerprintauth.FingerPrintAuthHelper;
 /**
  * Created by ashwanisingh on 24/06/18.
  */
-public class MainActivity extends BaseActivity implements FingerPrintAuthCallback {
+public class AuthenticationActivity extends BaseActivity implements FingerPrintAuthCallback {
 
     private TextView mAuthMsgTv;
     private ViewSwitcher mSwitcher;
@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity implements FingerPrintAuthCallbac
 
         // Initializing the views
         mSwitcher = findViewById(R.id.viewSwitcher);
-        mAuthMsgTv = findViewById(R.id.pin_et);
+        mAuthMsgTv = findViewById(R.id.message_tv);
         EditText pinEt = findViewById(R.id.pin_et);
 
 
@@ -49,8 +49,8 @@ public class MainActivity extends BaseActivity implements FingerPrintAuthCallbac
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().equals("1234")) {
-                    Alerts.showToast(MainActivity.this, "Authentication succeeded.");
-                    IntentUtils.openHomeActivity(MainActivity.this);
+                    Alerts.showToast(AuthenticationActivity.this, "Authentication succeeded.");
+                    IntentUtils.openHomeActivity(AuthenticationActivity.this);
                 }
             }
 
